@@ -3,7 +3,7 @@ export const bottomBar = [
         icon: 'house',
         green_icon: 'house_green',
         label: '•',
-        route: '/dashboard'
+        route: '/'
     },
     {
         icon: 'bar-chart',
