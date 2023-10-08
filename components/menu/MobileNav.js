@@ -10,7 +10,7 @@ export default function MobileNav() {
   const router = useRouter();
   const pathname = usePathname();
   return (
-    <section className="fixed w-screen bottom-0">
+    <section className="fixed w-screen bottom-0 bg-white pt-2">
       <div className='flex'>
         {bottomBar.map((button) => {
           const isActive = (pathname.includes(button.route) && button.route.length > 1) || pathname === button.route;
@@ -20,7 +20,7 @@ export default function MobileNav() {
                 href={button.route}
                 key={button.label}
               >
-                <Image src={`${isActive ? `/${button.green_icon}.svg` : `/${button.icon}.svg`}`} className={`${isActive ? '' : 'mb-6'}`} width={40} height={40} />
+                <Image alt={`${button.icon}`} src={`${isActive ? `/${button.green_icon}.svg` : `/${button.icon}.svg`}`} className={`${isActive ? '' : 'mb-6'}`} width={30} height={30} />
                 <p className={`${isActive ? '' : 'hidden'} text-xl text-center text-[#95e45b]`}>{button.label}</p>
               </Link>
             </div>

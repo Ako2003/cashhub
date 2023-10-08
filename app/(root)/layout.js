@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import Sidebar from '@/components/menu/Sidebar'
 import Topbar from '@/components/menu/Topbar'
 import MobileNav from '@/components/menu/MobileNav'
+import { dark } from '@clerk/themes'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -15,13 +16,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={dark}>
       <html lang="en">
         <body className={inter.className}>
           
-          <div className='sm:hidden'>
+          {/* <div className='sm:hidden'>
             <Topbar />
-          </div>
+          </div> */}
 
           <div>
             <div className='max-sm:hidden'>
