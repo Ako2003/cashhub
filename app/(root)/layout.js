@@ -7,6 +7,7 @@ import MobileNav from '@/components/menu/MobileNav'
 import { dark } from '@clerk/themes'
 
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -19,7 +20,6 @@ export default function RootLayout({ children }) {
     <ClerkProvider appearance={dark}>
       <html lang="en">
         <body className={inter.className}>
-          
           {/* <div className='sm:hidden'>
             <Topbar />
           </div> */}

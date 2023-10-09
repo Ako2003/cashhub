@@ -1,14 +1,32 @@
-import { cardContent } from '@/constants/card'
-import React from "react";
 import { CircularProgress, Tooltip } from '@nextui-org/react';
+import { cardContent } from '@/constants/card'
+import { motion } from "framer-motion";
 import Image from 'next/image';
+import React, { useState } from "react";
+import Modal from './Modal';
+
 
 export default function Card() {
-    return(
-      <section className='flex-row'>
-        {cardContent.map((card)=> {
+  const [selectedCardIndex, setSelectedCardIndex] = useState(null);
+
+        {/* Render the modal for the selected card */}
+        return(
+          <section className='flex-row'>
+            {selectedCardIndex !== null && (
+              <Modal
+                card={cardContent[selectedCardIndex].heading}
+                onClose={() => setSelectedCardIndex(null)}
+              />
+            )}
+        {cardContent.map((card, index)=> {
           return(
-            <div className={`bg-[${card.background}] flex p-10 my-10 rounded-3xl`}>
+            <div 
+            key={index}
+            className={`flex p-10 my-10 rounded-3xl`}
+            style={{
+              backgroundColor: card.background,
+            }}
+            >
               <div className='flex-1'>
                 <p className='text-2xl'>{card.heading}</p>
                 <p className='text-xs text-[#d5d5d5]'>{card.subheading}</p>
@@ -16,7 +34,11 @@ export default function Card() {
                   <p className='inline-block text-3xl'>{card.value}</p>
                 </Tooltip>
               </div>
-              <div className='flex items-center'>
+              <motion.div 
+              whileHover={{ scale: 1.4 }}
+              className='flex items-center cursor-pointer'
+              onClick={() => setSelectedCardIndex(index)}
+              >
                 <CircularProgress
                   classNames={{
                     svg: "w-24 h-24 drop-shadow-md",
@@ -26,7 +48,7 @@ export default function Card() {
                   color={card.color}
                   showValueLabel={true}
                 />
-              </div>
+              </motion.div>
               <div>
                 <Image 
                   src={card.arrow}

@@ -1,9 +1,9 @@
 export const cardContent = [
     {
         background: '#ffefe2',
-        heading: 'Sales',
-        subheading: 'Total Sales Today',
-        value: '$0.00',
+        heading: 'Expenses',
+        subheading: 'Total Expenses Today',
+        value: '$100.00',
         percent: 65,
         color: "warning",
         arrow: "arrow_warning.svg"
@@ -11,9 +11,9 @@ export const cardContent = [
     },
     {
         background: '#e2ffef',
-        heading: 'Orders',
-        subheading: 'Total Orders Today',
-        value: '$0.00',
+        heading: 'Savings',
+        subheading: 'Total Savings Today',
+        value: '$100.00',
         percent: 65,
         color:"success",
         arrow: "arrow_success.svg"
@@ -21,9 +21,9 @@ export const cardContent = [
     },
     {
         background: '#efe2ff',
-        heading: 'Customers',
-        subheading: 'Total Customers Today',
-        value: '$0.00',
+        heading: 'Plan',
+        subheading: '',
+        value: '$100.00',
         percent: 65,
         color: "secondary",
         arrow: "arrow_secondary.svg"
